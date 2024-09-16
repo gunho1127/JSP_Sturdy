@@ -37,7 +37,6 @@ public class SelectUserTest {
 				System.out.println(rs.getString("ROLE"));
 			}
 			
-			
 			/*
 			rs.next();
 			System.out.print(rs.getString("ID") + " : " );
@@ -65,8 +64,6 @@ public class SelectUserTest {
 			System.out.print(rs.getString("NAME") + " : " );
 			System.out.println(rs.getString("ROLE"));
 			*/
-			
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -75,6 +72,7 @@ public class SelectUserTest {
 			JDBCUtil.close(rs, stmt, conn);
 			
 		}
+		
 
 		
 		

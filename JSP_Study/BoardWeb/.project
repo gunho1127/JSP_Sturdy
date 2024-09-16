@@ -3,6 +3,8 @@
 	<name>BoardWeb</name>
 	<comment></comment>
 	<projects>
+		<project>lombok</project>
+		<project>h2-2.3.232</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

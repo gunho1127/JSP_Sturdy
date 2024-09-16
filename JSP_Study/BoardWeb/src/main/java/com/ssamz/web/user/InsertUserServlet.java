@@ -1,7 +1,13 @@
 package com.ssamz.web.user;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +18,20 @@ import com.ssamz.biz.user.UserVO;
 /**
  * Servlet implementation class InsertUserServlet
  */
+@WebServlet(urlPatterns = "/insertUser.do")
+//@WebServlet(urlPatterns = "/insertUser.do",
+//			initParams = @WebInitParam(name = "boardEncoding", value = "UTF-8"))
 public class InsertUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String encoding;
+
+	@Override
+	//public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		//super.init(config);
+		//encoding = config.getInitParameter("boardEncoding");
+		//System.out.println("---> Encoding : " + encoding);
+	//}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -23,6 +41,13 @@ public class InsertUserServlet extends HttpServlet {
 		
 		// 1. 사용자 입력 정보 추출
 		// 인코딩 처리
+		ServletContext context = getServletContext();
+		encoding = context.getInitParameter("boardEncoding");
+		
+		//ServletConfig config = getServletConfig();
+		//encoding = config.getInitParameter("boardEncoding");
+		System.out.println("---> Encoding : " + encoding);
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		String id = request.getParameter("id");
@@ -44,7 +69,10 @@ public class InsertUserServlet extends HttpServlet {
 		dao.insertUser(vo);
 		
 		// 3. 화면 이동
-		response.sendRedirect("login.html");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.html");
+		dispatcher.forward(request, response);
+		
+		//response.sendRedirect("login.html");
 		
 		/*
 		// 사용자 입력 정보 출력

@@ -22,8 +22,10 @@ public class InsertUserTest {
 		vo.setId("ssamz4");
 		vo.setPassword("ssamz123");
 		dao.insertUser(vo);
+		
 		//dao.insertUser("ADMIN", "쌤즈", "ssamz123", "ssamz3");
 		//dao.insertUser("ssamz3", "ssamz123", "쌤즈", "ADMIN");
+		
 		
 		// 3. 목록을 조회합니다.
 		dao.getUserList();
