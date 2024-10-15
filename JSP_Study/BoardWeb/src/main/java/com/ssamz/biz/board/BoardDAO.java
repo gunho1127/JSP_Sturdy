@@ -25,6 +25,11 @@ public class BoardDAO {
 	private static String BOARD_UPDATE = "update board set title = ?, content = ? where seq = ?";
 	private static String BOARD_DELETE = "delete board where seq = ?";
 	
+	// 검색 관련 쿼리
+	//select * from board where title like '%가입%' order by seq desc;
+	private static String BOARD_LIST_T = "select * from board where title like '%'||?||'%' order by seq desc";
+	//select * from board where content like '%안녕%' order by seq desc;
+	private static String BOARD_LIST_C = "select * from board where content like '%'||?||'%' order by seq desc";
 	
 	
 	// 글 목록 검색
@@ -37,7 +42,14 @@ public class BoardDAO {
 		try {
 			
 			conn = JDBCUtil.getConnection();
-			stmt = conn.prepareStatement(BOARD_LIST);
+			//stmt = conn.prepareStatement(BOARD_LIST);
+			if (vo.getSearchCondition().equals("TITLE")) {
+				stmt = conn.prepareStatement(BOARD_LIST_T);
+			} else if (vo.getSearchCondition().equals("CONTENT")) {
+				stmt = conn.prepareStatement(BOARD_LIST_C);
+			}
+			
+			stmt.setString(1, vo.getSearchKeyword());
 			
 			rs = stmt.executeQuery();
 			

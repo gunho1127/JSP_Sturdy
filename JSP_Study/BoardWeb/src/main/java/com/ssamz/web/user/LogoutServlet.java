@@ -22,6 +22,8 @@ public class LogoutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		//System.out.println("===> LogoutServlet 실행");
+		
 		HttpSession session = request.getSession();
 		session.invalidate();
 		

@@ -29,12 +29,14 @@ public class GetBoardServlet extends HttpServlet {
 		//System.out.println("---> GetBoardServlet -> service() 메소드 호출");
 		
 		// 0. 상태 정보 체크
+		/*
 		HttpSession session = request.getSession();
 		String userId = (String) session.getAttribute("userId");
 		
 		if (userId == null) {
 			response.sendRedirect("/");
 		}
+		*/
 		
 		
 		// 0. 상태 정보 체크
@@ -141,6 +143,7 @@ public class GetBoardServlet extends HttpServlet {
 		out.println("<hr>");
 		out.println("<a href='insertBoard.html'>글등록</a>&nbsp;&nbsp;&nbsp;");
 		
+		HttpSession session = request.getSession();
 		String userRole = (String) session.getAttribute("userRole");
 		
 		if (userRole.equals("ADMIN")) {

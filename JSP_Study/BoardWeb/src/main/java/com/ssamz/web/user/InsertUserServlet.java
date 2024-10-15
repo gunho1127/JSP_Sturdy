@@ -41,14 +41,14 @@ public class InsertUserServlet extends HttpServlet {
 		
 		// 1. 사용자 입력 정보 추출
 		// 인코딩 처리
-		ServletContext context = getServletContext();
-		encoding = context.getInitParameter("boardEncoding");
+		//ServletContext context = getServletContext();
+		//encoding = context.getInitParameter("boardEncoding");
 		
 		//ServletConfig config = getServletConfig();
 		//encoding = config.getInitParameter("boardEncoding");
-		System.out.println("---> Encoding : " + encoding);
+		//System.out.println("---> Encoding : " + encoding);
 		
-		request.setCharacterEncoding("UTF-8");
+		//request.setCharacterEncoding("UTF-8");
 		
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");

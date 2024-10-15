@@ -2,12 +2,6 @@
     <wb-module deploy-name="BoardWeb">
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <dependent-module archiveName="lombok.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/lombok/lombok">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="h2-2.3.232.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/h2-2.3.232/h2-2.3.232">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="BoardWeb"/>
         <property name="java-output-path" value="/BoardWeb/build/classes"/>
     </wb-module>

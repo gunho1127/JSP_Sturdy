@@ -28,12 +28,12 @@ public class UpdateBoardServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//System.out.println("---> UpdateBoardServlet -> doPost() 메소드 호출");
 		
-		// 인코딩 설정
-		ServletContext context = getServletContext();
-		encoding = context.getInitParameter("boardEncoding");
+		// 0. 인코딩 설정
+		//ServletContext context = getServletContext();
+		//encoding = context.getInitParameter("boardEncoding");
+		//request.setCharacterEncoding(encoding);
 		
 		// 1. 사용자 입력 정보 추출
-		request.setCharacterEncoding(encoding);
 		String title = request.getParameter("title");
 		String seq = request.getParameter("seq");
 		String content = request.getParameter("content");

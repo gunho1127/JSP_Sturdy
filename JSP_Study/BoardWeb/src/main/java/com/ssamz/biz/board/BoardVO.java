@@ -27,6 +27,12 @@ public class BoardVO {
 	private String content;
 	private Date regDate;
 	private int cnt;
+	
+	// 검색 관련 변수
+	private String searchCondition;
+	private String searchKeyword;
+	
+	
 /*	
 	// getter/setter 메소드
 	public int getSeq() {

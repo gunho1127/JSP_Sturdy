@@ -30,13 +30,14 @@ public class DeleteBoardServlet extends HttpServlet {
 		//System.out.println("---> DeleteBoardServlet -> doGet() 메소드 호출");
 		
 		// 0. 상태 정보 체크
+		/*
 		HttpSession session = request.getSession();
 		String userId = (String) session.getAttribute("userId");
 		
 		if (userId == null) {
 			response.sendRedirect("/");
 		}
-		
+		*/
 		
 		// 0. 상태 정보 체크
 		/*Cookie[] cookieList = request.getCookies(); 
